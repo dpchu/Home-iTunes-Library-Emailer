@@ -1,4 +1,4 @@
-import pyItunes, os, subprocess
+import pyItunes, os
 from pyItunes import *
 #Anything that's in ALLCAPS is something that needs to be replaced by your own information
 #step 1, wake pbook
