@@ -1,4 +1,4 @@
-import pyItunes, os
+import pyItunes, os, time
 from pyItunes import *
 #Anything that's in ALLCAPS is something that needs to be replaced by your own information
 #step 1, wake pbook
@@ -7,7 +7,8 @@ wakeBash = "/usr/bin/python ENTER-YOUR-PATH-TO-YOUR-WAKEUP-ON-LAN-SCRIPT-HERE"
 #step 1a, command to wake pb
 os.system(wakeBash)
 #print "The sleeper has awaken... "
-
+#step 1b, waits until target Mac is fully awake before attempting ssh
+time.sleep(15)
 #step 2, extract the xml from the target computer that should have iTunes with all your movies
 extractBash = 'scp USERNAME@IP-ADDRESS:/Users/USERNAME/Music/iTunes/"iTunes\ Music\ Library.xml" .'
 os.system(extractBash)
